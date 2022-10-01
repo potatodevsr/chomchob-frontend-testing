@@ -2,7 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Rating from "rc-rate";
-import "rc-rate/assets/index.css";
 import { fetchAPI } from "./api/fetchAPI";
 import clsx from "clsx";
 import Link from "next/link";
@@ -31,45 +30,10 @@ export default function Home() {
     fetchProducts({ setProducts })
   }, [])
 
-  const handleRating = (rate) => {
-    console.log("rate", rate);
-    setRating(rate);
-  };
 
   return (
     <>
-      <section className="bg-red-500">
-        <nav className="w-full flex items-center justify-between mx-auto">
-          <a href="#" className="logo py-4 pl-8">
-            <img src="cob-logo.webp" />
-          </a>
-          <ul className="navbar md:flex ma:items-center ">
-            <li className="text-white py-4 px-6">
-              <a href="#" className="">Home</a>
-            </li>
-            <li className="text-white py-4 px-6">
-              <a href="#">New Products</a>
-            </li>
-            <li className="text-white py-4 px-6">
-              <a href="#">Women</a>
-            </li>
-            <li className="text-white py-4 px-6">
-              <a href="#">Men</a>
-            </li>
-            <li className="text-white py-4 px-6">
-              <a href="#">Kid</a>
-            </li>
-            <li className="text-white py-4 px-6">
-              <a href="#">Accessories</a>
-            </li>
-            <li className="py-4 px-6">
-              <a href="#">
-                <img src="baghappy.svg" alt="" width={24} height={24} />
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </section>
+
 
       {/* Product lists */}
       {/* <section className="">
@@ -174,7 +138,7 @@ export default function Home() {
 
                 {/* Rating Star */}
                 <div>
-                  <Rating disabled={true} onChange={handleRating} value={product.attributes.review.rating} />
+                  <Rating disabled={true} value={product.attributes.review.rating} />
                 </div>
 
                 {/* Reviews */}
