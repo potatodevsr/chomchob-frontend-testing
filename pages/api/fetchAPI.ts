@@ -1,6 +1,5 @@
-// @ts-nocheck
 import axios from 'axios'
-// import { API_URL, API_TOKEN } from '~config'
+
 
 export function fetchAPI(options, success = (data) => {}, error = () => {}) {
   const { method = 'GET' } = options
